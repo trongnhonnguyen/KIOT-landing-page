@@ -1,0 +1,137 @@
+﻿@import "variables.less";
+
+html {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: @font-Helveticaneue;
+    color: @text-color;
+}
+
+.form-control:focus, select:focus, button:focus, button:active, .btn:focus, .page-link:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+ul {
+    list-style-type: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    transition: 0.5s;
+    color: inherit;
+
+    &:hover {
+        color: @kiot-logo-red;
+    }
+}
+
+a:hover, a:focus, a:active {
+    outline: none;
+    text-decoration: none;
+}
+
+::selection {
+    background-color: @kiot-logo-red;
+    color: @white;
+}
+
+/* Back to top */
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: @kiot-logo-red;
+    color: @white;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    border-radius: 50%;
+    right: 15px;
+    bottom: 15px;
+    transition: all 0.25s linear;
+    opacity: .5;
+    z-index: 11;
+
+    &:hover {
+        opacity:1;
+        transform: scale(1.25);
+    }
+
+    i {
+        padding-top: 12px;
+        color: @white;
+    }
+}
+
+/* Prelaoder */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+
+    &:before {
+        content: "";
+        position: fixed;
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        border: 6px solid #f2f2f2;
+        border-top: 6px solid @kiot-logo-red;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        -webkit-animation: animate-preloader .75s linear infinite;
+        animation: animate-preloader .75s linear infinite;
+    }
+}
+
+@-webkit-keyframes animate-preloader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-preloader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1199.98px) {
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    body {
+        font-size: .875rem;
+    }
+}
